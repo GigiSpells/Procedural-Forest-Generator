@@ -1,5 +1,7 @@
 import maya.cmds as cmds
 from PySide6 import QtWidgets, QtCore
+# TODO:
+# Fix 'Import "maya.cmds" could not be resolved.'
 
 
 # Creates an instance of the GUI for the procedural forest generator
@@ -28,6 +30,9 @@ class ForestGUI(QtWidgets.QDialog):
 # Creates an instance of a tree 
 # TODO: 
 # Add at least 2 tree types
+# Figure out how to do that ^ lol (Tree type classes that inhereit Tree?)
+# Maybe create "tree age" quality that sets a range of avg tree sizes
+# Allows user to decide tree size without picking numbers idk
 # Define create functions
 class Tree():
 
@@ -39,6 +44,26 @@ class Tree():
 
     def create_trunk(self):
         pass
+        # Create trunk with polyCone or tapered polyCylinder
+        # OR tapered polyCube
+        # Default size should differ by tree type
+
 
     def create_canopy(self):
         pass
+        # Create canopy with polyCone, polyCube, etc
+        # Shape based on tree type
+        # Oak = polySphere or polyCube
+        # Pine = polyCone or tapered polyCube
+
+
+# Creates an instance of a forest
+# Creates # of trees based on density attributes & forest size
+# TODO:
+# Research how to define tree placement/density to Maya
+# Find way to define forest size by drawing a path?? (challenging feature)
+class Forest():
+
+    def __init__(self):
+        self.density = 0
+    pass
